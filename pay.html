@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>繳費介面</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="container">
+    <div class="payment-form">
+        <h2 class="text-center">繳納停車費</h2>
+        <form>
+            
+            <div class="form-group">
+                <label for="userName">用戶名</label>
+                <input type="text" id="userName" placeholder="輸入用戶名" required>
+            </div>
+            <div class="form-group">
+                <label for="userEmail">電子郵件</label>
+                <input type="email" id="userEmail" placeholder="輸入電子郵件" required>
+            </div>
+
+            
+            <div class="form-group">
+                <label for="paymentMethod">支付方式</label>
+                <select id="paymentMethod" required>
+                    <option value="creditCard">信用卡</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="applePay">Apple Pay</option>
+                </select>
+            </div>
+
+            
+            <div id="creditCardInfo" class="payment-info">
+                <div class="form-group">
+                    <label for="cardNumber">信用卡號碼</label>
+                    <input type="text" id="cardNumber" placeholder="輸入信用卡號碼" required>
+                </div>
+                <div class="form-group">
+                    <label for="cardExpiry">到期日期</label>
+                    <input type="text" id="cardExpiry" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cardCVC">CVC</label>
+                    <input type="text" id="cardCVC" placeholder="輸入CVC" required>
+                </div>
+            </div>
+
+            
+            <div id="paypalInfo" class="payment-info hidden">
+                <p>您將被重定向到PayPal進行支付。</p>
+            </div>
+
+            
+            <div id="applePayInfo" class="payment-info hidden">
+                <p>使用Apple Pay進行支付。</p>
+            </div>
+
+            
+            <button type="submit" class="btn">確認支付</button>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    document.getElementById('paymentMethod').addEventListener('change', function() {
+        var selectedMethod = this.value;
+        document.querySelectorAll('.payment-info').forEach(function(info) {
+            info.classList.add('hidden');
+        });
+        if (selectedMethod === 'creditCard') {
+            document.getElementById('creditCardInfo').classList.remove('hidden');
+        } else if (selectedMethod === 'paypal') {
+            document.getElementById('paypalInfo').classList.remove('hidden');
+        } else if (selectedMethod === 'applePay') {
+            document.getElementById('applePayInfo').classList.remove('hidden');
+        }
+    });
+</script>
+
+</body>
+</html>
