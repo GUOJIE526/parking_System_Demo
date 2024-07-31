@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+        .map-container {
+            height: 400px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <title>Parking System</title>
+    
+</head>
+<body>
+    <header id="nvbar">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">智慧停車管理系統</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">預訂停車位</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user.html">用戶管理</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="home" class="container">
+        <div class="jumbotron">
+            <hi class="display-4">歡迎來到智慧停車管理系統</hi>
+            <p class="lead">提供便捷的停車位查看、預訂和支付服務，幫助停車場管理者有效管理停車位和預訂記錄。</p>
+        </div>
+    </div>
+    <div id="parking" class="parkingContainer">
+        <h2>停車位查看</h2>
+        <div id="map" class="map-container">
+
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+    <script>
+        // 初始化地圖
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArD3jbxH-ch0-WVvlaX3HuUPa-Vv4bgog&callback=initMap" async defer></script>  
+</body>
+</html>

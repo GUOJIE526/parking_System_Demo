@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>預訂停車位</title>
+</head>
+<body>
+    <div id="booking" class="container">
+        <h2>預定停車位</h2>
+        <form>
+            <div class="form-group">
+                <label for="parkingLot">選擇停車場</label>
+                <select class="form-control" id="parkingLot">
+                    <option >停車場A</option>
+                    <option >停車場B</option>
+                    <option >停車場C</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="parkingSpace">停車位號碼</label>
+                <input type="text" class="form-control" id="parkingSpace">
+            </div>
+            <div class="form-group">
+                <label for="startTime">預訂開始時間</label>
+                <input type="datetime-local" class="form-control" id="startTime">
+            </div>
+            <div class="form-group">
+                <label for="endTime">預訂結束時間</label>
+                <input type="datetime-local" class="form-control" id="endTime">
+            </div>
+            <button type="submit" class="btn btn-primary">確認預訂</button>
+        </form>
+    </div>
+</body>
+</html>
