@@ -4,16 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            padding-top: 56px;
-        }
-        .map-container {
-            height: 400px;
-            margin-bottom: 20px;
-        }
-    </style>
-    <title>Parking System</title>
+    <link rel="stylesheet" href="style.css">
+    <title>月租管理</title>
 </head>
 <body>
     <header id="nvbar">
@@ -39,29 +31,45 @@
                     <li class="nav-item">
                         <a class="nav-link" href="user.html">用戶管理</a>
                     </li>
+                    
                 </ul>
             </div>
         </nav>
     </header>
 
-    <div id="home" class="container">
-        <div class="jumbotron">
-            <h1 class="display-4">歡迎來到智慧停車管理系統</h1>
-            <p class="lead">提供便捷的停車位查看、預訂和支付服務，幫助停車場管理者有效管理停車位和預訂記錄。</p>
-        </div>
-    </div>
-    <div id="parking" class="parkingContainer">
-        <h2>停車位查看</h2>
-        <input type="text" id="keyword" placeholder="請輸入關鍵字" required>
-        <button id="searchBtn" class="btn btn-primary">搜索</button>
-        <div id="map" class="map-container"></div>
+    <div id="monthly" class="container">
+        <h2>月租管理</h2>
+        <form class="monthly-form">
+            <div class="form-group">
+                <label for="userName">用戶名</label>
+                <input type="text" id="userName" class="form-control" placeholder="輸入用戶名" required>
+            </div>
+            <div class="form-group">
+                <label for="userEmail">電子郵件</label>
+                <input type="email" id="userEmail" class="form-control" placeholder="輸入電子郵件" required>
+            </div>
+            <div class="form-group">
+                <label for="parkingLot">選擇停車場</label>
+                <select id="parkingLot" class="form-control" required>
+                    <option value="A">停車場A</option>
+                    <option value="B">停車場B</option>
+                    <option value="C">停車場C</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="startDate">開始日期</label>
+                <input type="date" id="startDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="endDate">結束日期</label>
+                <input type="date" id="endDate" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">確認月租</button>
+        </form>
     </div>
 
-    <!-- 加載Google Maps JavaScript API並引用script.js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQSgoeSOG3GiUPBftFXelZGoDGFQkiYAk&libraries=places&callback=initMap" async defer></script>
-    <script src="script.js"></script>
 </body>
 </html>
