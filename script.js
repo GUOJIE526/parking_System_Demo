@@ -12,6 +12,7 @@ function initMap() {
   service = new google.maps.places.PlacesService(map);
 
   document.getElementById("searchBtn").addEventListener("click", function () {
+    console.log("Search button clicked");
     performSearch();
   });
 }
@@ -29,14 +30,18 @@ function handleLocationError(browserHasGeolocation, pos) {
 
 function performSearch() {
   const keyword = document.getElementById("keyword").value;
+  console.log("Performing search for keyword:", keyword);
+
   const request = {
     query: keyword,
     fields: ["name", "geometry"],
   };
 
   service.findPlaceFromQuery(request, function (results, status) {
+    console.log("findPlaceFromQuery status:", status);
     if (status === google.maps.places.PlacesServiceStatus.OK && results[0]) {
       const location = results[0].geometry.location;
+      console.log("Location found:", location);
       map.setCenter(location);
 
       // 在關鍵字位置附近搜索停車場
@@ -48,6 +53,7 @@ function performSearch() {
       service.nearbySearch(
         parkingRequest,
         function (parkingResults, parkingStatus) {
+          console.log("nearbySearch status:", parkingStatus);
           if (parkingStatus === google.maps.places.PlacesServiceStatus.OK) {
             for (let i = 0; i < parkingResults.length; i++) {
               createMarker(parkingResults[i]);
