@@ -1,3 +1,4 @@
+// script.js
 let map;
 let infoWindow;
 let service;
@@ -81,3 +82,17 @@ function createMarker(place) {
     infoWindow.open(map, marker);
   });
 }
+
+// 動態加載API密鑰並初始化地圖
+function loadScript() {
+  const script = document.createElement("script");
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places&callback=initMap`;
+  script.async = true;
+  script.defer = true;
+  document.body.appendChild(script);
+}
+
+// 等待DOM加載完成後加載地圖腳本
+document.addEventListener("DOMContentLoaded", function () {
+  loadScript();
+});
