@@ -25,13 +25,15 @@ jobs:
         run: npm run build
 
       - name: Replace API key
-        run: sed -i 's/YOUR_API_KEY/${{ secrets.API_KEY }}/g' script.js
+        run: |
+          echo "Replacing API_KEY in script.js"
+          sed -i 's/YOUR_API_KEY/'"${{ secrets.API_KEY }}"'/g' script.js
 
       - name: Deploy to server
         run: |
           echo "Deploying with API_KEY"
 
-          # 使用scp將文件複製到遠程服務器
+          # 假設你要使用scp將文件複製到遠程服務器
           scp -r . user@server:/path/to/deploy
 
           # 或者使用rsync同步文件
