@@ -3,6 +3,21 @@ let infoWindow;
 let service;
 
 function initMap() {
+  fetch("/api-key")
+    .then((response) => response.json())
+    .then((data) => {
+      const apiKey = data.apiKey;
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initializeMap`;
+      script.async = true;
+      document.head.appendChild(script);
+    })
+    .catch((error) => {
+      console.error("Error fetching API key:", error);
+    });
+}
+
+function initializeMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 15,
     center: { lat: 22.630556, lng: 120.302778 }, // 漢神巨蛋的大致位置
@@ -82,3 +97,5 @@ function createMarker(place) {
     infoWindow.open(map, marker);
   });
 }
+
+document.addEventListener("DOMContentLoaded", initMap);
