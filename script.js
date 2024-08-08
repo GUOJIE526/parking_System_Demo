@@ -65,23 +65,22 @@ function performSearch() {
         radius: "500", // 搜索半徑500米
         type: ["parking", "station"],
       };
-      service.nearbySearch(
-        parkingRequest,
-        function (parkingResults, parkingStatus) {
-          console.log("nearbySearch status:", parkingStatus);
-          if (parkingStatus === google.maps.places.PlacesServiceStatus.OK) {
-            for (let i = 0; i < parkingResults.length; i++) {
-              createMarker(parkingResults[i]);
-            }
-          } else {
-            console.error("附近沒有找到停車場");
-          }
-        }
-      );
+      service.nearbySearch(parkingRequest, handleNearbySearchResults);
     } else {
       console.error("找不到相關地點");
     }
   });
+}
+
+function handleNearbySearchResults(results, status) {
+  console.log("nearbySearch status:", status);
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
+    for (let i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
+  } else {
+    console.error("附近沒有找到停車場");
+  }
 }
 
 function createMarker(place) {
