@@ -8,9 +8,24 @@
         body {
             padding-top: 56px;
         }
+        .parkingContainer{
+            padding: 0 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
         .map-container {
-            height: 400px;
+            height: 600px; /* 更改地圖高度 */
+            width: 100%; /* 確保地圖寬度為100% */
             margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .map-container {
+                height: 400px; /* 在小屏幕上設置較小的高度 */
+            }
         }
     </style>
     <title>Parking System</title>
