@@ -46,7 +46,7 @@ function performSearch() {
 
       const parkingRequest = {
         location: location,
-        radius: "500", // 搜索半徑500米
+        radius: "500", // 搜索半徑500公尺
         type: ["parking"],
       };
       service.nearbySearch(
