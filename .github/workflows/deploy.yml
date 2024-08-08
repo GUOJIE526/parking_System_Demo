@@ -24,11 +24,15 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to server
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
-        run: |
-          echo "Deploying with API_KEY: $API_KEY"
+      - name: Replace API key
+        run: sed -i 's/YOUR_API_KEY/${{ secrets.API_KEY }}/g' script.js
 
-          # 使用環境變量
+      - name: Deploy to server
+        run: |
+          echo "Deploying with API_KEY"
+
+          # 使用scp將文件複製到遠程服務器
           scp -r . user@server:/path/to/deploy
+
+          # 或者使用rsync同步文件
+          rsync -avz . user@server:/path/to/deploy
