@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "deploy": "^1.0.3",
-    "dotenv": "^16.4.5",
-    "echo": "^0.1.9",
-    "express": "^4.19.2"
-  }
-}
