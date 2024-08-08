@@ -5,7 +5,7 @@ let service;
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 15,
-    center: { lat: 22.630556, lng: 120.302778 }, // 漢神巨蛋的大致位置
+    center: { lat: 22.630556, lng: 120.302778 },
   });
 
   infoWindow = new google.maps.InfoWindow();
