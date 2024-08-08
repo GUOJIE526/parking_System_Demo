@@ -3,7 +3,7 @@ let infoWindow;
 let service;
 
 function initMap() {
-  fetch("/api-key")
+  fetch("/api-key.json")
     .then((response) => response.json())
     .then((data) => {
       const apiKey = data.apiKey;
@@ -65,19 +65,7 @@ function performSearch() {
         radius: "500", // 搜索半徑500米
         type: ["parking", "station"],
       };
-      service.nearbySearch(
-        parkingRequest,
-        function (parkingResults, parkingStatus) {
-          console.log("nearbySearch status:", parkingStatus);
-          if (parkingStatus === google.maps.places.PlacesServiceStatus.OK) {
-            for (let i = 0; i < parkingResults.length; i++) {
-              createMarker(parkingResults[i]);
-            }
-          } else {
-            console.error("附近沒有找到停車場");
-          }
-        }
-      );
+      service.nearbySearch(parkingRequest, handleNearbySearchResults);
     } else {
       console.error("找不到相關地點");
     }
