@@ -81,13 +81,3 @@ function createMarker(place) {
     infoWindow.open(map, marker);
   });
 }
-
-// 動態加載Google Maps API
-document.addEventListener("DOMContentLoaded", function () {
-  const script = document.createElement("script");
-  const apiKey = "YOUR_API_KEY"; // 這裡將被GitHub Actions替換為實際的API Key
-  script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initMap`;
-  script.async = true;
-  script.defer = true;
-  document.head.appendChild(script);
-});
