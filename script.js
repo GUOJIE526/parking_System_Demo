@@ -3,21 +3,6 @@ let infoWindow;
 let service;
 
 function initMap() {
-  fetch("/api-key")
-    .then((response) => response.json())
-    .then((data) => {
-      const apiKey = data.apiKey;
-      const script = document.createElement("script");
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initializeMap`;
-      script.async = true;
-      document.head.appendChild(script);
-    })
-    .catch((error) => {
-      console.error("Error fetching API key:", error);
-    });
-}
-
-function initializeMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 15,
     center: { lat: 22.630556, lng: 120.302778 }, // 漢神巨蛋的大致位置
@@ -63,24 +48,25 @@ function performSearch() {
       const parkingRequest = {
         location: location,
         radius: "500", // 搜索半徑500米
-        type: ["parking", "station"],
+        type: ["parking"],
       };
-      service.nearbySearch(parkingRequest, handleNearbySearchResults);
+      service.nearbySearch(
+        parkingRequest,
+        function (parkingResults, parkingStatus) {
+          console.log("nearbySearch status:", parkingStatus);
+          if (parkingStatus === google.maps.places.PlacesServiceStatus.OK) {
+            for (let i = 0; i < parkingResults.length; i++) {
+              createMarker(parkingResults[i]);
+            }
+          } else {
+            console.error("附近沒有找到停車場");
+          }
+        }
+      );
     } else {
       console.error("找不到相關地點");
     }
   });
-}
-
-function handleNearbySearchResults(results, status) {
-  console.log("nearbySearch status:", status);
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-    for (let i = 0; i < results.length; i++) {
-      createMarker(results[i]);
-    }
-  } else {
-    console.error("附近沒有找到停車場");
-  }
 }
 
 function createMarker(place) {
@@ -96,5 +82,3 @@ function createMarker(place) {
     infoWindow.open(map, marker);
   });
 }
-
-document.addEventListener("DOMContentLoaded", initMap);
