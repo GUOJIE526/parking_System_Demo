@@ -44,7 +44,6 @@ function performSearch() {
       console.log("Location found:", location);
       map.setCenter(location);
 
-      // 在關鍵字位置附近搜索停車場
       const parkingRequest = {
         location: location,
         radius: "500", // 搜索半徑500米
@@ -82,3 +81,12 @@ function createMarker(place) {
     infoWindow.open(map, marker);
   });
 }
+
+// 動態加載Google Maps API
+document.addEventListener("DOMContentLoaded", function() {
+  const script = document.createElement("script");
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${{ secrets.API_KEY }}&libraries=places&callback=initMap`;
+  script.async = true;
+  script.defer = true;
+  document.head.appendChild(script);
+});
