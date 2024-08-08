@@ -26,7 +26,7 @@ jobs:
 
       - name: Replace API key
         env:
-          API_KEY: ${{ secrets.API_KEY }}
+          API_KEY: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Replacing API_KEY in script.js"
           sed -i 's/YOUR_API_KEY/'"$API_KEY"'/g' script.js
