@@ -21,10 +21,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Create .env file
-        run: echo "API_KEY=${{ secrets.GOOGLE_MAPS_API_KEY }}" > api.env
-
-      - name: Build and deploy
+      - name: Create API key file
         run: |
-          npm run build
-          npm run deploy
+          echo "{ \"apiKey\": \"${{ secrets.GOOGLE_MAPS_API_KEY }}\" }" > public/api-key.json
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public # 確保這個路徑是你的靜態文件的輸出目錄
