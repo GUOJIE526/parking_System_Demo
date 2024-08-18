@@ -1,75 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>月租管理</title>
-</head>
-<body>
+  </head>
+  <body>
     <header id="nvbar">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">智慧停車管理系統</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">首頁</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="booking.html">預訂停車位</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="rent.html">月租管理</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pay.html">線上繳費</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="user.html">用戶管理</a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">智慧停車管理系統</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">首頁</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="booking.html">預訂停車位</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="rent.html">月租管理</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pay.html">線上繳費</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="user.html">用戶管理</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <div id="monthly" class="container">
-        <h2>月租管理</h2>
-        <form class="monthly-form">
-            <div class="form-group">
-                <label for="userName">用戶名</label>
-                <input type="text" id="userName" class="form-control" placeholder="輸入用戶名" required>
-            </div>
-            <div class="form-group">
-                <label for="userEmail">電子郵件</label>
-                <input type="email" id="userEmail" class="form-control" placeholder="輸入電子郵件" required>
-            </div>
-            <div class="form-group">
-                <label for="parkingLot">選擇停車場</label>
-                <select id="parkingLot" class="form-control" required>
-                    <option value="A">停車場A</option>
-                    <option value="B">停車場B</option>
-                    <option value="C">停車場C</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="startDate">開始日期</label>
-                <input type="date" id="startDate" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="endDate">結束日期</label>
-                <input type="date" id="endDate" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-primary">確認月租</button>
-        </form>
+      <h2>月租管理</h2>
+      <form class="monthly-form">
+        <div class="form-group">
+          <label for="userName">用戶名</label>
+          <input
+            type="text"
+            id="userName"
+            class="form-control"
+            placeholder="輸入用戶名"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="userEmail">電子郵件</label>
+          <input
+            type="email"
+            id="userEmail"
+            class="form-control"
+            placeholder="輸入電子郵件"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="parkingLot">選擇停車場</label>
+          <select id="parkingLot" class="form-control" required>
+            <option value="A">停車場A</option>
+            <option value="B">停車場B</option>
+            <option value="C">停車場C</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="startDate">開始日期</label>
+          <input type="date" id="startDate" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label for="endDate">結束日期</label>
+          <input type="date" id="endDate" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-primary">確認月租</button>
+      </form>
     </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
