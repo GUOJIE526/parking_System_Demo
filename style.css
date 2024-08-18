@@ -110,8 +110,52 @@ body {
     text-decoration: none;
   }
 
+  .drawer{
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin-top: 4rem;
+    width: 400px;
+    height: 80%;
+    background-color: #e9ce36;
+    box-shadow: -1px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .drawer.open{
+    transform: translateX(0);
+  }
+
+  .parkingInfo h6{
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .parkingInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 10px 0;
+  }
+
+  .drawer-btn{
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 100px;
+    border-radius: 30px;
+    background-color: lightblue;
+    
+  }
+  .drawer-btn:hover{
+    background-color: #007bff;
+    color: #ddd;
+  }
+
   @media (max-width: 768px) {
     .map-container {
       height: 400px; /* 在小屏幕上設置較小的高度 */
     }
   }
+

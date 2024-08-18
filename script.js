@@ -68,6 +68,11 @@ function performSearch() {
   });
 }
 
+function opendrawer() {
+  const drawer = document.getElementById("drawer");
+  drawer.classList.add("open");
+}
+
 function createMarker(place) {
   if (!place.geometry || !place.geometry.location) return;
 
@@ -79,5 +84,6 @@ function createMarker(place) {
   google.maps.event.addListener(marker, "click", function () {
     infoWindow.setContent(place.name || "");
     infoWindow.open(map, marker);
+    opendrawer();
   });
 }
