@@ -91,7 +91,7 @@ function createMarker(place) {
 
   google.maps.event.addListener(marker, "click", function () {
     infoWindow.setContent(place.name || "");
-    infoWindow.open(map, marker);
+    // infoWindow.open(map, marker);
     opendrawer(place.name);
     CloseDrawer();
   });
