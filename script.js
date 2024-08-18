@@ -68,9 +68,10 @@ function performSearch() {
   });
 }
 
-function opendrawer() {
+function opendrawer(place) {
   const drawer = document.getElementById("drawer");
   drawer.classList.add("open");
+  document.getElementById("parkName").innerHTML = place;
 }
 
 function CloseDrawer() {
@@ -91,7 +92,7 @@ function createMarker(place) {
   google.maps.event.addListener(marker, "click", function () {
     infoWindow.setContent(place.name || "");
     infoWindow.open(map, marker);
-    opendrawer();
+    opendrawer(place.name);
     CloseDrawer();
   });
 }
