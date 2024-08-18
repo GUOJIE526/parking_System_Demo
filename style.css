@@ -127,6 +127,15 @@ body {
     transform: translateX(0);
   }
 
+  .parking-name button{
+    color: black;
+    font-weight: bold;
+  }
+
+  .parking-name button:hover{
+    color: red;
+  }
+
   .parkingInfo h6{
     font-size: 2.5rem;
     font-weight: bold;

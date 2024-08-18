@@ -73,6 +73,13 @@ function opendrawer() {
   drawer.classList.add("open");
 }
 
+function CloseDrawer() {
+  const close = document.querySelector(".close");
+  close.addEventListener("click", () => {
+    document.getElementById("drawer").classList.remove("open");
+  });
+}
+
 function createMarker(place) {
   if (!place.geometry || !place.geometry.location) return;
 
@@ -85,5 +92,6 @@ function createMarker(place) {
     infoWindow.setContent(place.name || "");
     infoWindow.open(map, marker);
     opendrawer();
+    CloseDrawer();
   });
 }
