@@ -1,12 +1,12 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
-    margin: 0;
-    padding: 20px;
 }
 
 .container {
@@ -46,7 +46,7 @@ body {
 
 .btn {
     display: block;
-    width: 100%;
+    width: 30%;
     padding: 10px;
     background-color: #007bff;
     color: #fff;
@@ -71,3 +71,45 @@ body {
 .payment-info {
     margin-top: 20px;
 }
+.parkingContainer {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .map-container {
+    height: 600px; /* 更改地圖高度 */
+    width: 100%; /* 確保地圖寬度為100% */
+    margin-bottom: 20px;
+  }
+  .footer-container {
+    background-color: #555;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: azure;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0 auto;
+    
+  }
+  .list > li > a:link {
+    color: azure;
+    text-decoration: none;
+  }
+  .list > li > a:hover {
+    color: red;
+  }
+  .list>li>a:visited {
+    color: azure;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .map-container {
+      height: 400px; /* 在小屏幕上設置較小的高度 */
+    }
+  }

@@ -1,71 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
 
     <title>預訂停車位</title>
-</head>
-<body>
+  </head>
+  <body>
     <header id="nvbar">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">智慧停車管理系統</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">首頁</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="booking.html">預訂停車位</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="rent.html">月租管理</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pay.html">線上繳費</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="user.html">用戶管理</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">智慧停車管理系統</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">首頁</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="booking.html">預訂停車位</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="rent.html">月租管理</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pay.html">線上繳費</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="user.html">用戶管理</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <div id="booking" class="container">
-        <h2>預定停車位</h2>
-        <form>
-            <div class="form-group">
-                <label for="parkingLot">選擇停車場</label>
-                <select class="form-control" id="parkingLot">
-                    <option >停車場A</option>
-                    <option >停車場B</option>
-                    <option >停車場C</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="parkingSpace">停車位號碼</label>
-                <input type="text" class="form-control" id="parkingSpace">
-            </div>
-            <div class="form-group">
-                <label for="startTime">預訂開始時間</label>
-                <input type="datetime-local" class="form-control" id="startTime">
-            </div>
-            <div class="form-group">
-                <label for="endTime">預訂結束時間</label>
-                <input type="datetime-local" class="form-control" id="endTime">
-            </div>
-            <button type="submit" class="btn btn-primary">確認預訂</button>
-        </form>
+      <h2>預定停車位</h2>
+      <form>
+        <div class="form-group">
+          <label for="parkingLot">選擇停車場</label>
+          <select class="form-control" id="parkingLot">
+            <option>停車場A</option>
+            <option>停車場B</option>
+            <option>停車場C</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="parkingSpace">車牌號碼</label>
+          <input type="text" class="form-control" id="parkingSpace" />
+        </div>
+        <div class="form-group">
+          <label for="startTime">預訂開始時間</label>
+          <input type="datetime-local" class="form-control" id="startTime" />
+        </div>
+        <div class="form-group">
+          <label for="endTime">預訂結束時間</label>
+          <input type="datetime-local" class="form-control" id="endTime" />
+        </div>
+        <button type="submit" class="btn btn-primary">確認預訂</button>
+      </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-</body>
+  </body>
 </html>
