@@ -121,6 +121,8 @@ body {
     box-shadow: -1px 0 5px rgba(0, 0, 0, 0.1);
     transform: translateX(100%);
     transition: transform 0.3s ease;
+    border: 1px solid black;
+    border-radius: 20px;
   }
 
   .drawer.open{
