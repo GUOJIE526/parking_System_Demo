@@ -75,7 +75,7 @@ function opendrawer(place) {
 }
 
 function CloseDrawer() {
-  const close = document.querySelector(".close");
+  const close = document.querySelector(".btnclose");
   close.addEventListener("click", () => {
     document.getElementById("drawer").classList.remove("open");
   });

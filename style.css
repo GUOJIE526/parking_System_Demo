@@ -129,13 +129,28 @@ body {
     transform: translateX(0);
   }
 
-  .parking-name button{
-    color: black;
-    font-weight: bold;
+  .parking-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+    
   }
 
-  .parking-name button:hover{
-    color: red;
+  .btnclose{
+    
+    padding-left: 200px;
+    width: 30px;
+    height: 30px;
+    font-size: 36px;
+    color: black;
+  }
+  .btnclose:hover{
+    color: #fff;
+    -webkit-animation: btnclose 0.3s linear infinite both;
+	        animation: btnclose 0.3s linear infinite both;
   }
 
   .parkingInfo h6{
@@ -164,6 +179,58 @@ body {
     color: #ddd;
   }
 
+ @-webkit-keyframes btnclose {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+@keyframes btnclose {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
   @media (max-width: 768px) {
     .map-container {
       height: 400px; /* 在小屏幕上設置較小的高度 */
