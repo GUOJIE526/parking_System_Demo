@@ -166,13 +166,24 @@ body {
     margin: 10px 0;
   }
 
+  .parkingInfo a:link{
+    color: black;
+  }
+
+  .parkingInfo a:visited{
+    color: black;
+  }
+  .parkingInfo a:hover{
+    color: white;
+    text-decoration: none;
+  }
+
   .drawer-btn{
     font-size: 1.5rem;
     font-weight: 700;
     width: 100px;
     border-radius: 30px;
     background-color: lightblue;
-    
   }
   .drawer-btn:hover{
     background-color: #007bff;
